@@ -1,5 +1,5 @@
 # To run from your terminal:
-  # TOKEN='' =OLDPW='' NEWPW='' sh curl-scripts/authorized/change-pass.sh
+  # TOKEN='' OLDPW='' NEWPW='' sh curl-scripts/authorized/change-pass.sh
 
 curl "https://tic-tac-toe-api-production.herokuapp.com/change-password" \
   --include \
