@@ -16,6 +16,7 @@ const signInSuccess = function (response) {
   $('.authenticated').show()
 }
 const changePasswordSuccess = function (response) {
+  $('form').trigger('reset')
   $('#message').text('Password Changed Successfully!')
 }
 const signOutSuccess = function () {

@@ -35,14 +35,25 @@
   }
 }
 
-* {
-  box-sizing: border-box;
-}
-
 $border-color: #000;
 
 html {
   margin: auto;
+}
+
+.message {
+  > div {
+    display: flex;
+    height: 2em;
+
+    > img {
+      box-sizing: content-box;
+      display: block;
+      min-height: 100%;
+      padding-left: 10px;
+      padding-top: 7px;
+    }
+ }
 }
 
 .row {
