@@ -1,1 +1,25 @@
 @import '~bootstrap/scss/bootstrap';
+
+* {
+  box-sizing: border-box;
+}
+$border-color: #000;
+
+html {
+  margin: auto;
+}
+
+.container {
+  border: 2px solid $border-color;
+  margin: auto;
+}
+
+.col-4 {
+  border: 1px solid $border-color;
+  padding-top: 33.3%;
+}
+
+img {
+  max-width: 100%;
+  position: absolute;
+}

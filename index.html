@@ -13,48 +13,81 @@
     </head>
     <body>
       <h1>Tic-Tac-Toe</h1>
-      <p id="message"></p>
-      <div class="unauthenticated">
-        <form id="sign-up">
-          <input
-          name="credentials[email]"
-          type="text"
-          placeholder="Enter email">
-          <input
-          name="credentials[password]"
-          type="password"
-          placeholder="Enter Password">
-          <input
-          name="credentials[password_confirmation]"
-          type="password"
-          placeholder="Confirm Password">
-          <button type="submit">Sign Up</button>
-        </form>
-        <form id="sign-in">
-          <input
-            placeholder="Enter email"
+      <nav>
+        <p id="message"></p>
+        <div class="unauthenticated">
+          <form id="sign-up">
+            <input
+            name="credentials[email]"
             type="text"
-            name="credentials[email]"/>
-          <input
-            placeholder="Enter Password"
+            placeholder="Enter email">
+            <input
+            name="credentials[password]"
             type="password"
-            name="credentials[password]"/>
-          <button type="submit">Sign In</button>
-        </form>
-      </div>
-      <div class="authenticated">
-        <form id="change-password">
-          <input
-            placeholder="Enter Current Password"
+            placeholder="Enter Password">
+            <input
+            name="credentials[password_confirmation]"
             type="password"
-            name="passwords[old]"/>
-          <input
-            placeholder="Enter New Password"
-            type="password"
-            name="passwords[new]"/>
-          <button type="submit">Change Password</button>
-        </form>
-        <button id="sign-out">Sign Out</button>
+            placeholder="Confirm Password">
+            <button type="submit">Sign Up</button>
+          </form>
+          <form id="sign-in">
+            <input
+              placeholder="Enter email"
+              type="text"
+              name="credentials[email]"/>
+            <input
+              placeholder="Enter Password"
+              type="password"
+              name="credentials[password]"/>
+            <button type="submit">Sign In</button>
+          </form>
+        </div>
+        <div class="authenticated">
+          <form id="change-password">
+            <input
+              placeholder="Enter Current Password"
+              type="password"
+              name="passwords[old]"/>
+            <input
+              placeholder="Enter New Password"
+              type="password"
+              name="passwords[new]"/>
+            <button type="submit">Change Password</button>
+          </form>
+          <button id="sign-out">Sign Out</button>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <img src="" alt="">
+          </div>
+          <div class="col-4">
+            <img src="" alt="">
+          </div>
+          <div class="col-4">
+            <img src="" alt="">
+          </div>
+          <div class="col-4">
+            <img src="" alt="">
+          </div>
+          <div class="col-4">
+            <img src="" alt="">
+          </div>
+          <div class="col-4">
+            <img src="" alt="">
+          </div>
+          <div class="col-4">
+            <img src="" alt="">
+          </div>
+          <div class="col-4">
+            <img src="" alt="">
+          </div>
+          <div class="col-4">
+            <img src="" alt="">
+          </div>
+        </div>
       </div>
     </body>
 </html>
