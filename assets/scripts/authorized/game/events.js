@@ -8,15 +8,14 @@ const onGameStart = function (event) {
   api.gameStart()
   .then(ui.gameStartSuccess)
   .catch(ui.failure)
-  ui.gameStartSuccess()
 }
-const onGameShow = function (event) {
+const onBoardReveal = function (event) {
   event.preventDefault()
-  ui.gameShowSuccess()
+  ui.boardRevealSuccess()
 }
 
 
 module.exports = {
   onGameStart,
-  onGameShow
+  onBoardReveal
 }
