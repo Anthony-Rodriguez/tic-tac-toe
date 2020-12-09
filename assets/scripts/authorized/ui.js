@@ -23,6 +23,7 @@ const signOutSuccess = function () {
   $('form').trigger('reset')
   $('.unauthenticated').show()
   $('.authenticated').hide()
+  $('.container').hide()
 }
 
 module.exports = {
