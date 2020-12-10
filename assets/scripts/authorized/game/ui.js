@@ -10,7 +10,7 @@ const boardRevealSuccess = function () {
   $('#board-reveal').hide()
 }
 const gameStartSuccess = function (response) {
-  $('#message').html("<div><h2>Let's Begin! You are player</h2><img src ='public/letter-x-img.png'></div>")
+  $('#message').html("<div><h2>Let's Begin! You are player</h2><img src='public/letter-x-img.png'></div>")
     store.game = response.game
 }
 
