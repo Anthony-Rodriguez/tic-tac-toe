@@ -12,6 +12,25 @@ const gameStart = function () {
   })
 }
 
+const cellUpdate = function (cellIndex, player) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game._id,
+    method: 'PATCH',
+    data: {
+      game: {
+        cell: {
+          index: cellIndex,
+          value: player
+        },
+        over: false
+      }
+    },
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 module.exports = {
-  gameStart
+  gameStart,
+  cellUpdate
 }

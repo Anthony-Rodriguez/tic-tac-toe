@@ -13,4 +13,5 @@ $(() => {
   $('#game-start').hide()
   $('#board-reveal').on('click', gameEvents.onBoardReveal)
   $('#game-start').on('click', gameEvents.onGameStart)
+  $('.col-4').on('click', gameEvents.onCellUpdate)
 })
