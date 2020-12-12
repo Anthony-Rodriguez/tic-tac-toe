@@ -25,6 +25,7 @@ const signOutSuccess = function () {
   $('.unauthenticated').show()
   $('.authenticated').hide()
   $('.container').hide()
+  $('#game-start').show()
 }
 
 module.exports = {

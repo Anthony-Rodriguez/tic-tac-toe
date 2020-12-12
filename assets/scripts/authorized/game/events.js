@@ -1,6 +1,7 @@
 'use strict'
 const api = require('./api')
 const ui = require('./ui')
+const events = require('./events')
 // const store = require('./../../store')
 let numberOfTurns = 0
 
@@ -35,8 +36,20 @@ const onCellUpdate = function (event) {
   }
 }
 
+const onGameRestart = function (event) {
+  event.preventDefault()
+  const cellIndex = 10
+  const player = 'restart'
+  numberOfTurns = 0
+  api.gameStart()
+    .then(ui.gameStartSuccess)
+    .then(ui.gameRestartSuccess(cellIndex, player))
+    .catch(ui.failure)
+$('.col-4').bind('click', onCellUpdate)
+}
 module.exports = {
   onGameStart,
   onCellUpdate,
-  numberOfTurns
+  numberOfTurns,
+  onGameRestart
 }

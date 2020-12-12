@@ -11,6 +11,7 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#game').hide()
   $('#game-restart').hide()
+  $('#game-restart').on('click', gameEvents.onGameRestart)
   $('#game-start').on('click', gameEvents.onGameStart)
   $('.col-4').on('click', gameEvents.onCellUpdate)
 })
