@@ -24,11 +24,10 @@ const onCellUpdate = function (event) {
   } else {
     player = players.player2
   }
-  console.log(player)
   if (($(cell).css('background-image') === 'none')) {
     api.cellUpdate(cellIndex, player)
       .then(function (response) {
-        ui.cellUpdateSuccess(response, player, event)
+        ui.cellUpdateSuccess(response, player, event, cellIndex)
         numberOfTurns++
       })
   } else {
