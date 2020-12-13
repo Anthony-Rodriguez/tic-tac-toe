@@ -5,12 +5,28 @@
     height: 140px;
     margin: auto;
   }
+
+  main {
+    height: 2rem;
+
+    > p {
+      font-size: 2rem;
+    }
+  }
 }
 
 @media (min-width: 576px) {
   .container {
     height: 170px;
     margin: auto;
+  }
+
+  main {
+    height: 2rem;
+
+    > p {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -19,12 +35,28 @@
     height: 227px;
     margin: auto;
   }
+
+  main {
+    height: 3rem;
+
+    > p {
+      font-size: 3rem;
+    }
+  }
 }
 
 @media (min-width: 992px) {
   .container {
     height: 330px;
     margin: auto;
+  }
+
+  main {
+    height: 4rem;
+
+    > p {
+      font-size: 4rem;
+    }
   }
 }
 
@@ -33,28 +65,67 @@
     height: 358px;
     margin: auto;
   }
+
+  main {
+    height: 5rem;
+
+    > p {
+      font-size: 5rem;
+    }
+  }
+}
+$border-color: #000;
+$game-background-color: #2b6684;
+$background-color: #012e67;
+$text-color: #9cacbf;
+$form-text-color: #000;
+$main-text: 'Share Tech Mono';
+
+* {
+  color: $text-color;
+  font-family: $main-text, sans-serif;
 }
 
-$border-color: #000;
-$background-color: #404dff;
+input,
+button {
+  color: $form-text-color;
+}
+
+html,
+body {
+  background-color: $background-color;
+}
 
 footer {
   padding-bottom: 5%;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  margin-left: 20%;
+  margin-right: 20%;
+
+  > p {
+    height: 100%;
+    text-align: center;
+  }
+}
+
 .message {
+
   > div {
     display: flex;
-    height: 2em;
+    height: 3rem;
+    justify-content: center;
+    margin-right: .5%;
+    margin-top: .5%;
+    vertical-align: middle;
+  }
 
-    > img {
-      box-sizing: content-box;
-      display: block;
-      min-height: 100%;
-      padding-left: 10px;
-      padding-top: 7px;
-    }
- }
+  > img {
+    max-width: 100%;
+  }
 }
 
 .row {
@@ -62,20 +133,34 @@ footer {
 }
 
 .col-4 {
-  background-color: $background-color;
+  background-color: $game-background-color;
   border: 3px solid $border-color;
   height: 100%;
   padding: 0;
 }
 
 .col-12 {
-  height: 40%;
+  font-size: 1.2rem;
+  height: 4rem;
 }
 
 h2 {
-  text-align: center;
+  display: flex;
+  height: 2.5rem;
+  justify-content: center;
+  margin-right: .5%;
+  margin-top: .5%;
+
+
+  > img {
+    box-sizing: content-box;
+    display: block;
+    left: 5px;
+    position: relative;
+    top: 3px;
+  }
 }
 
 nav {
-  margin-bottom: 5%;
+  padding-bottom: 2%;
 }

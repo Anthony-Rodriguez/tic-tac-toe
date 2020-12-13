@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <style media="screen">
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+      </style>
+      <title>Tic-Tac-Whoa</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,56 +15,121 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Tic-Tac-Toe</h1>
-      <nav>
-        <p id="message" class="message"></p>
+      <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="signUpModalLabel">Sign Up Below!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sign-up">
+                <input
+                name="credentials[email]"
+                type="text"
+                placeholder="Enter email">
+                <input
+                name="credentials[password]"
+                type="password"
+                placeholder="Enter Password">
+                <input
+                name="credentials[password_confirmation]"
+                type="password"
+                placeholder="Confirm Password">
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="signInModalLabel">Sign In Below!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sign-in">
+                <input
+                  placeholder="Enter email"
+                  type="text"
+                  name="credentials[email]"/>
+                <input
+                  placeholder="Enter Password"
+                  type="password"
+                  name="credentials[password]"/>
+                <button type="submit" class="btn btn-primary">Sign In</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="changePasswordModalLabel">Change Password Below!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="change-password">
+                <input
+                  placeholder="Enter Current Password"
+                  type="password"
+                  name="passwords[old]"/>
+                <input
+                  placeholder="Enter New Password"
+                  type="password"
+                  name="passwords[new]"/>
+                <button type="submit" class="btn btn-info">Change Password</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
         <div class="unauthenticated">
-          <form id="sign-up">
-            <input
-            name="credentials[email]"
-            type="text"
-            placeholder="Enter email">
-            <input
-            name="credentials[password]"
-            type="password"
-            placeholder="Enter Password">
-            <input
-            name="credentials[password_confirmation]"
-            type="password"
-            placeholder="Confirm Password">
-            <button type="submit">Sign Up</button>
-          </form>
-          <form id="sign-in">
-            <input
-              placeholder="Enter email"
-              type="text"
-              name="credentials[email]"/>
-            <input
-              placeholder="Enter Password"
-              type="password"
-              name="credentials[password]"/>
-            <button type="submit">Sign In</button>
-          </form>
+          <nav class="nav justify-content-center">
+            <button type="button" class="btn btn-primary col-12 col-sm-4 col-lg-5 mr-1" data-toggle="modal" data-target="#signUpModal">
+              No Account? Sign Up Here!
+            </button>
+            <button type="button" class="btn btn-primary col-12 col-sm-4 col-lg-5 " data-toggle="modal" data-target="#signInModal">
+              Sign In Here!
+            </button>
+          </nav>
+          <main>
+            <p>Are you ready to play the most fantastically average game of tic-tac-toe??
+            <br>Sign in and click on New Game!</p>
+          </main>
         </div>
         <div class="authenticated">
-          <form id="change-password">
-            <input
-              placeholder="Enter Current Password"
-              type="password"
-              name="passwords[old]"/>
-            <input
-              placeholder="Enter New Password"
-              type="password"
-              name="passwords[new]"/>
-            <button type="submit" class="btn btn-info">Change Password</button>
-          </form>
-          <button id="sign-out" class="btn btn-secondary">Sign Out</button>
-          <button id="game-start" class="btn btn-primary">NEW GAME</button>
+          <nav class="nav justify-content-end">
+            <button type="button" class="btn btn-primary mr-1" data-toggle="modal" data-target="#changePasswordModal">
+              Change Password
+            </button>
+            <button id="sign-out" class="btn btn-secondary">Sign Out</button>
+          </nav>
+          <button id="game-start" class="btn btn-info btn-lg btn-block Start">NEW GAME</button>
         </div>
-      </nav>
+      <div id="message" class="message col-12"></div>
       <div class="container" id="game">
         <div class="row">
-          <div class="col-12" id="game-counter"></div>
+          <div class="col-12 game-counter" id="game-counter"></div>
           <div class="col-4" data-cell-index='0'></div>
           <div class="col-4" data-cell-index='1'></div>
           <div class="col-4" data-cell-index='2'></div>
@@ -71,10 +139,8 @@
           <div class="col-4" data-cell-index='6'></div>
           <div class="col-4" data-cell-index='7'></div>
           <div class="col-4" data-cell-index='8'></div>
-          <button id="game-restart" class="btn btn-primary col-12">RESTART</button>
+          <button id="game-restart" class="btn btn-primary btn-lg btn-block">RESTART</button>
         </div>
       </div>
-      <footer>
-      </footer>
     </body>
 </html>

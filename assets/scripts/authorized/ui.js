@@ -4,20 +4,30 @@ const store = require('./../store')
 const failure = function (error) {
   $('#message').text(error.responseJSON.message)
 }
+const signUpFailure = function (error) {
+  $('#signUpModalLabel').text(error.responseJSON.message)
+}
+const signInFailure = function (error) {
+  $('#signInModalLabel').text(error.responseJSON.message)
+}
+const changePasswordFailure = function (error) {
+  $('#changePasswordModalLabel').text(error.responseJSON.message)
+}
 const signUpSuccess = function (response) {
-  $('#message').text('Signed Up Successfully!')
+  $('#signUpModalLabel').text('Signed Up Successfully!')
   $('form').trigger('reset')
 }
 const signInSuccess = function (response) {
-  $('#message').text('Signed In Successfully!')
+  $('#signInModalLabel').text('Signed In Successfully!')
   $('form').trigger('reset')
   store.user = response.user
-  $('.unauthenticated').hide()
   $('.authenticated').show()
+  $('.unauthenticated').hide()
+  $('.close').trigger('click')
 }
 const changePasswordSuccess = function (response) {
   $('form').trigger('reset')
-  $('#message').text('Password Changed Successfully!')
+  $('#changePasswordModalLabel').text('Password Changed Successfully!')
 }
 const signOutSuccess = function () {
   $('#message').text('Signed Out Successfully!')
@@ -26,6 +36,7 @@ const signOutSuccess = function () {
   $('.authenticated').hide()
   $('.container').hide()
   $('#game-start').show()
+  $('.col-4').removeAttr('style')
 }
 
 module.exports = {
@@ -33,5 +44,8 @@ module.exports = {
   signUpSuccess,
   signInSuccess,
   changePasswordSuccess,
+  signUpFailure,
+  signInFailure,
+  changePasswordFailure,
   signOutSuccess
 }

@@ -1,7 +1,6 @@
 'use strict'
 const store = require('./../../store')
 const api = require('./api')
-const events = require('./api')
 
 let gamesPlayed = 0
 
@@ -10,7 +9,7 @@ const failure = function (error) {
 }
 
 const gameStartSuccess = function (response) {
-  $('#message').html("<div><h2>Let's begin with player </h2><img src='public/letter-x-img.png'></div>")
+  $('#message').html("<div><h2>Let's begin with player <img src=public/letter-x-img.png></h2></div>")
   $('#game-restart').show()
   $('#game-start').hide()
   $('.container').show()
@@ -35,37 +34,37 @@ const cellUpdateSuccess = function (response, player, event, cellIndex) {
   const myBox = event.target
   if (player === 'X') {
     $(myBox).css(picX)
-    $('#message').html("<div><h2>It's your turn, player </h2><img src='public/letter-o-img.png'></div>")
+    $('#message').html("<div><h2>It's your turn, player <img src='public/letter-o-img.png'></h2></div>")
     if (space[0] === 'X' && space[1] === 'X' && space[2] === 'X') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-x-img.png'></div>")
+      $('#message').html("<div><h2>The winner is player <img src='public/letter-x-img.png'></h2></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[3] === 'X' && space[4] === 'X' && space[5] === 'X') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-x-img.png'></div>")
+    } else if (space[3] === 'X' && space[4] === 'X' && space[5] === 'X') {
+      $('#message').html("<div><h2>The winner is player <img src='public/letter-x-img.png'></h2></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[6] === 'X' && space[7] === 'X' && space[8] === 'X') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-x-img.png'></div>")
+    } else if (space[6] === 'X' && space[7] === 'X' && space[8] === 'X') {
+      $('#message').html("<div><h2>The winner is player <img src='public/letter-x-img.png'></h2></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[0] === 'X' && space[3] === 'X' && space[6] === 'X') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-x-img.png'></div>")
+    } else if (space[0] === 'X' && space[3] === 'X' && space[6] === 'X') {
+      $('#message').html("<div><h2>The winner is player <img src='public/letter-x-img.png'></h2></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[1] === 'X' && space[4] === 'X' && space[7] === 'X') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-x-img.png'></div>")
+    } else if (space[1] === 'X' && space[4] === 'X' && space[7] === 'X') {
+      $('#message').html("<div><h2>The winner is player <img src='public/letter-x-img.png'></h2></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[2] === 'X' && space[5] === 'X' && space[8] === 'X') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-x-img.png'></div>")
+    } else if (space[2] === 'X' && space[5] === 'X' && space[8] === 'X') {
+      $('#message').html("<div><h2>The winner is player <img src='public/letter-x-img.png'></h2></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[0] === 'X' && space[4] === 'X' && space[8] === 'X') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-x-img.png'></div>")
+    } else if (space[0] === 'X' && space[4] === 'X' && space[8] === 'X') {
+      $('#message').html("<div><h2>The winner is player <img src='public/letter-x-img.png'></h2></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[2] === 'X' && space[4] === 'X' && space[6] === 'X') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-x-img.png'></div>")
+    } else if (space[2] === 'X' && space[4] === 'X' && space[6] === 'X') {
+      $('#message').html("<div><h2>The winner is player <img src='public/letter-x-img.png'></h2></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
       // check for draw by looking for any empty strings left in the space (store.game.cells) array
@@ -77,40 +76,40 @@ const cellUpdateSuccess = function (response, player, event, cellIndex) {
   }
   if (player === 'O') {
     $(myBox).css(picO)
-    $('#message').html("<div><h2>It's your turn, player </h2><img src='public/letter-x-img.png'></div>")
+    $('#message').html("<div><h2>It's your turn, player <img src='public/letter-x-img.png'></h2></div>")
     if (space[0] === 'O' && space[1] === 'O' && space[2] === 'O') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-o-img.png'></div>")
+      $('#message').html("<div><h2>The winner is player </h2><img src='public/letter-o-img.png'></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[3] === 'O' && space[4] === 'O' && space[5] === 'O') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-o-img.png'></div>")
+    } else if (space[3] === 'O' && space[4] === 'O' && space[5] === 'O') {
+      $('#message').html("<div><h2>The winner is player </h2><img src='public/letter-o-img.png'></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[6] === 'O' && space[7] === 'O' && space[8] === 'O') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-o-img.png'></div>")
+    } else if (space[6] === 'O' && space[7] === 'O' && space[8] === 'O') {
+      $('#message').html("<div><h2>The winner is player </h2><img src='public/letter-o-img.png'></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[0] === 'O' && space[3] === 'O' && space[6] === 'O') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-o-img.png'></div>")
+    } else if (space[0] === 'O' && space[3] === 'O' && space[6] === 'O') {
+      $('#message').html("<div><h2>The winner is player </h2><img src='public/letter-o-img.png'></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[1] === 'O' && space[4] === 'O' && space[7] === 'O') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-o-img.png'></div>")
+    } else if (space[1] === 'O' && space[4] === 'O' && space[7] === 'O') {
+      $('#message').html("<div><h2>The winner is player </h2><img src='public/letter-o-img.png'></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[2] === 'O' && space[5] === 'O' && space[8] === 'O') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-o-img.png'></div>")
+    } else if (space[2] === 'O' && space[5] === 'O' && space[8] === 'O') {
+      $('#message').html("<div><h2>The winner is player </h2><img src='public/letter-o-img.png'></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[0] === 'O' && space[4] === 'O' && space[8] === 'O') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-o-img.png'></div>")
+    } else if (space[0] === 'O' && space[4] === 'O' && space[8] === 'O') {
+      $('#message').html("<div><h2>The winner is player </h2><img src='public/letter-o-img.png'></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space[2] === 'O' && space[4] === 'O' && space[6] === 'O') {
-      $('#message').html("<div><h2>The winner is Player </h2><img src='public/letter-o-img.png'></div>")
+    } else if (space[2] === 'O' && space[4] === 'O' && space[6] === 'O') {
+      $('#message').html("<div><h2>The winner is player </h2><img src='public/letter-o-img.png'></div>")
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
-      } else if (space.includes('') === false) {
+    } else if (space.includes('') === false) {
       $('#message').html('<div><h2>DRAW GAME!</h2></div>')
       api.gameOver(cellIndex, player)
       $('.col-4').unbind('click')
@@ -120,7 +119,7 @@ const cellUpdateSuccess = function (response, player, event, cellIndex) {
 const gameRestartSuccess = function (cellIndex, player) {
   $('.col-4').removeAttr('style')
   gamesPlayed += 1
-  $('#message').html("<div><h2>Let's begin with player </h2><img src='public/letter-x-img.png'></div>")
+  $('#message').html("<div><h2>Let's begin with player <img src='public/letter-x-img.png'></h2></div>")
   api.gameOver(cellIndex, player)
 }
 module.exports = {
