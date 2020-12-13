@@ -13,6 +13,11 @@
       font-size: 2rem;
     }
   }
+
+  h2 {
+    font-size: 1.45rem;
+    padding-top: 7px;
+  }
 }
 
 @media (min-width: 576px) {
@@ -154,8 +159,9 @@ h2 {
 
   > img {
     box-sizing: content-box;
-    display: block;
+    display: inline-block;
     left: 5px;
+    max-width: 35px;
     position: relative;
     top: 3px;
   }
