@@ -3,6 +3,7 @@ const api = require('./api')
 const getFormFields = require('./../../../lib/get-form-fields')
 const ui = require('./ui')
 const gameApi = require('./game/api')
+const store = require('./../store')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -29,10 +30,14 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 const onSignOut = function (event) {
+  if (store.game === undefined) {
+    ui.signOutSuccess()
+  } else {
   gameApi.gameOver(10, 'logout')
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.failure)
+  }
 }
 module.exports = {
   onSignUp,

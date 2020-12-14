@@ -30,12 +30,13 @@ const changePasswordSuccess = function (response) {
   $('#changePasswordModalLabel').text('Password Changed Successfully!')
 }
 const signOutSuccess = function () {
-  $('#message').text('Signed Out Successfully!')
+  $('#home-message').html("<p>Signed out Successfully!<br>Sign back in to play some more!</p>")
   $('form').trigger('reset')
   $('.unauthenticated').show()
   $('.authenticated').hide()
   $('.container').hide()
   $('#game-start').show()
+  $('#message').hide()
   $('.col-4').removeAttr('style')
 }
 
