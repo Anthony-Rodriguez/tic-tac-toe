@@ -16837,6 +16837,7 @@ var signInSuccess = function signInSuccess(response) {
   $('.authenticated').show();
   $('.unauthenticated').hide();
   $('.close').trigger('click');
+  $('#message').show();
 };
 var changePasswordSuccess = function changePasswordSuccess(response) {
   $('form').trigger('reset');
