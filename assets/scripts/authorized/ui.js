@@ -24,13 +24,14 @@ const signInSuccess = function (response) {
   $('.authenticated').show()
   $('.unauthenticated').hide()
   $('.close').trigger('click')
+  $('#signInModalLabel').text('Sign In Below!')
 }
 const changePasswordSuccess = function (response) {
   $('form').trigger('reset')
   $('#changePasswordModalLabel').text('Password Changed Successfully!')
 }
 const signOutSuccess = function () {
-  $('#home-message').html("<p>Signed out Successfully!<br>Sign back in to play some more!</p>")
+  $('#home-message').html('<p>Signed out Successfully!<br>Sign back in to play some more!</p>')
   $('form').trigger('reset')
   $('.unauthenticated').show()
   $('.authenticated').hide()

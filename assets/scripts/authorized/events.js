@@ -33,10 +33,10 @@ const onSignOut = function (event) {
   if (store.game === undefined) {
     ui.signOutSuccess()
   } else {
-  gameApi.gameOver(10, 'logout')
-  api.signOut()
-    .then(ui.signOutSuccess)
-    .catch(ui.failure)
+    gameApi.gameOver(10, 'logout')
+    api.signOut()
+      .then(ui.signOutSuccess)
+      .catch(ui.failure)
   }
 }
 module.exports = {

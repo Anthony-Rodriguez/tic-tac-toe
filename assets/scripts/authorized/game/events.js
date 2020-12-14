@@ -18,6 +18,7 @@ const onGameStart = function (event) {
     .then(ui.gameStartSuccess)
     .then(ui.boardRevealSuccess)
     .catch(ui.failure)
+  $('.col-4').bind('click', onCellUpdate)
 }
 const onCellUpdate = function (event) {
   const cellIndex = $(this).data('cell-index')
@@ -55,9 +56,9 @@ const onGameRestart = function (event) {
   $('.col-4').bind('click', onCellUpdate)
 }
 module.exports = {
+  numberOfTurns,
   onGamesGet,
   onGameStart,
   onCellUpdate,
-  numberOfTurns,
   onGameRestart
 }

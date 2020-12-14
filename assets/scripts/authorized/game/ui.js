@@ -2,8 +2,6 @@
 const store = require('./../../store')
 const api = require('./api')
 
-let gamesPlayed = 0
-
 const failure = function (error) {
   $('#message').text(error.responseJSON.message)
 }
@@ -16,7 +14,6 @@ const gameStartSuccess = function (response) {
   $('#game-restart').show()
   $('#game-start').hide()
   $('.container').show()
-  $('#game-counter').html(`<div><h2>Game Streak: ${gamesPlayed}</h2></div>`)
   store.game = response.game
 }
 const cellUpdateSuccess = function (response, player, event, cellIndex) {
@@ -121,7 +118,6 @@ const cellUpdateSuccess = function (response, player, event, cellIndex) {
 }
 const gameRestartSuccess = function (cellIndex, player) {
   $('.col-4').removeAttr('style')
-  gamesPlayed += 1
   $('#message').html("<div><h2>Let's begin with player <img src='public/letter-x-img.png'></h2></div>")
   api.gameOver(cellIndex, player)
 }
@@ -131,6 +127,5 @@ module.exports = {
   gamesGetSuccess,
   gameStartSuccess,
   cellUpdateSuccess,
-  gamesPlayed,
   gameRestartSuccess
 }
