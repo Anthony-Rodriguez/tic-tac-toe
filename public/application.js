@@ -16837,7 +16837,6 @@ var signInSuccess = function signInSuccess(response) {
   $('.authenticated').show();
   $('.unauthenticated').hide();
   $('.close').trigger('click');
-  $('#message').show();
 };
 var changePasswordSuccess = function changePasswordSuccess(response) {
   $('form').trigger('reset');
@@ -16948,6 +16947,7 @@ var gamesGetSuccess = function gamesGetSuccess(response) {
 };
 var gameStartSuccess = function gameStartSuccess(response) {
   $('#message').html("<div><h2>Let's begin with player <img src=public/letter-x-img.png></h2></div>");
+  $('#message').show();
   $('#game-restart').show();
   $('#game-start').hide();
   $('.container').show();
