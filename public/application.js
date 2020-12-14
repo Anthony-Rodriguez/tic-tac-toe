@@ -16715,6 +16715,7 @@ var signOut = function signOut() {
     }
   });
 };
+
 module.exports = {
   signUp: signUp,
   signIn: signIn,
@@ -16837,13 +16838,14 @@ var signInSuccess = function signInSuccess(response) {
   $('.authenticated').show();
   $('.unauthenticated').hide();
   $('.close').trigger('click');
+  $('#signInModalLabel').text('Sign In Below!');
 };
 var changePasswordSuccess = function changePasswordSuccess(response) {
   $('form').trigger('reset');
   $('#changePasswordModalLabel').text('Password Changed Successfully!');
 };
 var signOutSuccess = function signOutSuccess() {
-  $('#home-message').html("<p>Signed out Successfully!<br>Sign back in to play some more!</p>");
+  $('#home-message').html('<p>Signed out Successfully!<br>Sign back in to play some more!</p>');
   $('form').trigger('reset');
   $('.unauthenticated').show();
   $('.authenticated').hide();
@@ -16886,6 +16888,7 @@ var onGameStart = function onGameStart(event) {
   numberOfTurns = 0;
   event.preventDefault();
   api.gameStart().then(ui.gameStartSuccess).then(ui.boardRevealSuccess).catch(ui.failure);
+  $('.col-4').bind('click', onCellUpdate);
 };
 var onCellUpdate = function onCellUpdate(event) {
   var cellIndex = $(this).data('cell-index');
@@ -16919,10 +16922,10 @@ var onGameRestart = function onGameRestart(event) {
   $('.col-4').bind('click', onCellUpdate);
 };
 module.exports = {
+  numberOfTurns: numberOfTurns,
   onGamesGet: onGamesGet,
   onGameStart: onGameStart,
   onCellUpdate: onCellUpdate,
-  numberOfTurns: numberOfTurns,
   onGameRestart: onGameRestart
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29)))
@@ -16937,8 +16940,6 @@ module.exports = {
 var store = __webpack_require__(53);
 var api = __webpack_require__(96);
 
-var gamesPlayed = 0;
-
 var failure = function failure(error) {
   $('#message').text(error.responseJSON.message);
 };
@@ -16951,7 +16952,6 @@ var gameStartSuccess = function gameStartSuccess(response) {
   $('#game-restart').show();
   $('#game-start').hide();
   $('.container').show();
-  $('#game-counter').html('<div><h2>Game Streak: ' + gamesPlayed + '</h2></div>');
   store.game = response.game;
 };
 var cellUpdateSuccess = function cellUpdateSuccess(response, player, event, cellIndex) {
@@ -17056,7 +17056,6 @@ var cellUpdateSuccess = function cellUpdateSuccess(response, player, event, cell
 };
 var gameRestartSuccess = function gameRestartSuccess(cellIndex, player) {
   $('.col-4').removeAttr('style');
-  gamesPlayed += 1;
   $('#message').html("<div><h2>Let's begin with player <img src='public/letter-x-img.png'></h2></div>");
   api.gameOver(cellIndex, player);
 };
@@ -17066,7 +17065,6 @@ module.exports = {
   gamesGetSuccess: gamesGetSuccess,
   gameStartSuccess: gameStartSuccess,
   cellUpdateSuccess: cellUpdateSuccess,
-  gamesPlayed: gamesPlayed,
   gameRestartSuccess: gameRestartSuccess
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29)))
