@@ -9,7 +9,7 @@ const gamesGetSuccess = function (response) {
   $('#getGamesTotal').text(response.games.length)
 }
 const gameStartSuccess = function (response) {
-  $('#message').html("<div><h2>Let's begin with player <img src=public/letter-x-img.png></h2></div>")
+  $('#message').html('<div><h2>Starting Player: <img src=public/letter-x-img.png></h2></div>')
   $('#message').show()
   $('#game-restart').show()
   $('#game-start').hide()
@@ -34,7 +34,7 @@ const cellUpdateSuccess = function (response, player, event, cellIndex) {
   const myBox = event.target
   if (player === 'X') {
     $(myBox).css(picX)
-    $('#message').html("<div><h2>It's your turn, player <img src='public/letter-o-img.png'></h2></div>")
+    $('#message').html("<div><h2>Go, player <img src='public/letter-o-img.png'></h2></div>")
     if (space[0] === 'X' && space[1] === 'X' && space[2] === 'X') {
       $('#message').html("<div><h2>Winner: <img src='public/letter-x-img.png'></h2></div>")
       api.gameOver(cellIndex, player)
@@ -76,7 +76,7 @@ const cellUpdateSuccess = function (response, player, event, cellIndex) {
   }
   if (player === 'O') {
     $(myBox).css(picO)
-    $('#message').html("<div><h2>It's your turn, player <img src='public/letter-x-img.png'></h2></div>")
+    $('#message').html("<div><h2>Go, player <img src='public/letter-x-img.png'></h2></div>")
     if (space[0] === 'O' && space[1] === 'O' && space[2] === 'O') {
       $('#message').html("<div><h2>Winner: <img src='public/letter-o-img.png'></h2></div>")
       api.gameOver(cellIndex, player)
@@ -118,7 +118,7 @@ const cellUpdateSuccess = function (response, player, event, cellIndex) {
 }
 const gameRestartSuccess = function (cellIndex, player) {
   $('.col-4').removeAttr('style')
-  $('#message').html("<div><h2>Let's begin with player <img src='public/letter-x-img.png'></h2></div>")
+  $('#message').html('<div><h2>Starting Player: <img src=public/letter-x-img.png></h2></div>')
   api.gameOver(cellIndex, player)
 }
 

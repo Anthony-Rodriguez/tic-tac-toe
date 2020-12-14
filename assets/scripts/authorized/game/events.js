@@ -12,7 +12,6 @@ const onGamesGet = function (event) {
     .catch(ui.failure)
 }
 const onGameStart = function (event) {
-  numberOfTurns = 0
   event.preventDefault()
   api.gameStart()
     .then(ui.gameStartSuccess)
@@ -43,17 +42,16 @@ const onCellUpdate = function (event) {
     $('#message').html('<div><h2>Choose an empty tile!</h2></div>')
   }
 }
-
 const onGameRestart = function (event) {
   event.preventDefault()
   const cellIndex = 10
   const player = 'restart'
-  numberOfTurns = 0
   api.gameStart()
     .then(ui.gameStartSuccess)
     .then(ui.gameRestartSuccess(cellIndex, player))
     .catch(ui.failure)
   $('.col-4').bind('click', onCellUpdate)
+  numberOfTurns = 0
 }
 module.exports = {
   numberOfTurns,
