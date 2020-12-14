@@ -5,7 +5,7 @@ const ui = require('./ui')
 // const store = require('./../../store')
 let numberOfTurns = 0
 
-const onGamesGet = function (event){
+const onGamesGet = function (event) {
   event.preventDefault()
   api.gamesGet()
     .then(ui.gamesGetSuccess)

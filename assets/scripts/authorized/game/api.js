@@ -14,7 +14,7 @@ const gamesGet = function () {
 const gameStart = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
-    method: 'GET',
+    method: 'POST',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
