@@ -14,4 +14,5 @@ $(() => {
   $('#game-restart').on('click', gameEvents.onGameRestart)
   $('#game-start').on('click', gameEvents.onGameStart)
   $('.col-4').on('click', gameEvents.onCellUpdate)
+  $('#get-games').on('click', gameEvents.onGamesGet)
 })

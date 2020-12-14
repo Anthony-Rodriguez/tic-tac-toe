@@ -2,16 +2,24 @@
 const config = require('./../../config')
 const store = require('./../../store')
 
-const gameStart = function () {
+const gamesGet = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
-    method: 'POST',
+    method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
   })
 }
-
+const gameStart = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 const cellUpdate = function (cellIndex, player) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
@@ -49,6 +57,7 @@ const gameOver = function (cellIndex, player) {
   })
 }
 module.exports = {
+  gamesGet,
   gameStart,
   cellUpdate,
   gameOver

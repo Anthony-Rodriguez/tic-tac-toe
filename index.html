@@ -15,6 +15,24 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <div class="modal fade" id="getGamesModal" tabindex="-1" aria-labelledby="getGamesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="getGamesModalLabel">Games Played</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h3 id='getGamesTotal'></h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -119,10 +137,11 @@
         </div>
         <div class="authenticated">
           <nav class="nav justify-content-end">
-            <button type="button" class="btn btn-primary mr-1" data-toggle="modal" data-target="#changePasswordModal">
+            <button id="get-games" class="btn btn-info btn-sm mr-1" data-toggle="modal" data-target="#getGamesModal">Total Played</button>
+            <button type="button" class="btn btn-primary btn-sm mr-1" data-toggle="modal" data-target="#changePasswordModal">
               Change Password
             </button>
-            <button id="sign-out" class="btn btn-secondary">Sign Out</button>
+            <button id="sign-out" class="btn btn-secondary btn-sm">Sign Out</button>
           </nav>
           <button id="game-start" class="btn btn-info btn-lg btn-block Start">NEW GAME</button>
         </div>

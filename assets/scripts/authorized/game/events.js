@@ -5,6 +5,12 @@ const ui = require('./ui')
 // const store = require('./../../store')
 let numberOfTurns = 0
 
+const onGamesGet = function (event){
+  event.preventDefault()
+  api.gamesGet()
+    .then(ui.gamesGetSuccess)
+    .catch(ui.failure)
+}
 const onGameStart = function (event) {
   numberOfTurns = 0
   event.preventDefault()
@@ -49,6 +55,7 @@ const onGameRestart = function (event) {
   $('.col-4').bind('click', onCellUpdate)
 }
 module.exports = {
+  onGamesGet,
   onGameStart,
   onCellUpdate,
   numberOfTurns,
