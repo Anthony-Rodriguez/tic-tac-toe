@@ -12,6 +12,7 @@ const gamesGetSuccess = function (response) {
 }
 const gameStartSuccess = function (response) {
   $('#message').html("<div><h2>Let's begin with player <img src=public/letter-x-img.png></h2></div>")
+  $('#message').show()
   $('#game-restart').show()
   $('#game-start').hide()
   $('.container').show()

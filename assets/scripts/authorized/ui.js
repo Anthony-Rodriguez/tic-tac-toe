@@ -24,7 +24,6 @@ const signInSuccess = function (response) {
   $('.authenticated').show()
   $('.unauthenticated').hide()
   $('.close').trigger('click')
-  $('#message').show()
 }
 const changePasswordSuccess = function (response) {
   $('form').trigger('reset')
