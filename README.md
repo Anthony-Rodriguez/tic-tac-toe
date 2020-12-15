@@ -64,14 +64,6 @@ any device.
 
 - Planning on adding a feature that allows user to change their token.
 
-## Images
+## Wireframe
 
-Wireframe:
 ![tic-tac-toe](https://i.imgur.com/9nH4lcb.png)
-
-Player Tokens:
-
-X:
-![x-icon](public\letter-x-img.png)
-O:
-![o-icon](public\letter-o-img.png)
