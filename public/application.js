@@ -16887,7 +16887,6 @@ var onGamesGet = function onGamesGet(event) {
 var onGameStart = function onGameStart(event) {
   event.preventDefault();
   api.gameStart().then(ui.gameStartSuccess).then(ui.boardRevealSuccess).catch(ui.failure);
-  $('.col-4').bind('click', onCellUpdate);
 };
 var onCellUpdate = function onCellUpdate(event) {
   var cellIndex = $(this).data('cell-index');
