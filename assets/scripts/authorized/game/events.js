@@ -17,7 +17,6 @@ const onGameStart = function (event) {
     .then(ui.gameStartSuccess)
     .then(ui.boardRevealSuccess)
     .catch(ui.failure)
-  $('.col-4').bind('click', onCellUpdate)
 }
 const onCellUpdate = function (event) {
   const cellIndex = $(this).data('cell-index')
