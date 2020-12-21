@@ -26,8 +26,9 @@ create a wireframe to have an idea of how the page was going to look.
 
 My main focus was on getting the game to work. After having the login functions
 working correctly, I focused on the game itself. I quickly realized that I was
-unaware of how to pass functions values. Once that concept clicked, the rest
-was fairly simple. The coding for the game was done in a couple days and the
+unaware of how to pass functions values. This was my main issue, but I opened a
+support issue ticket any time I needed guidance. Once that concept clicked, the
+rest was fairly simple. The coding for the game was done in a few days and the
 rest of the time was spent on design.
 
 I used bootstrap and CSS to make my page look the way it does. It was easy
